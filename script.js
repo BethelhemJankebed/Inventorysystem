@@ -17,9 +17,25 @@ function addProduct(id, name, price, quantity) {
 }
 
 // 2. Remove Product
+
 function removeProduct(id) {
-  // TODO: queen odede
+  let found = false;
+
+  for (let i = 0; i < inventory.length; i++) {
+    
+    if (inventory[i].id === id) {
+      inventory.splice(i, 1); // remove 1 item at index i
+      found = true;
+      console.log(`Product with ID ${id} removed successfully.`);
+      break;
+    }
+  }
+
+  if (!found) {
+    console.log(`Product with ID ${id} not found.`)
+  }
 }
+
 
 // 3. Update Stock
 function updateStock(id, newQuantity) {
