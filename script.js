@@ -3,7 +3,17 @@ let inventory = [];
 
 // 1. Add Product
 function addProduct(id, name, price, quantity) {
-  // TODO: bethelhem jankebed
+     // 1. Add Product
+function addProduct(id, name, price, quantity) {
+  let product = {
+    id: id,
+    name: name,
+    price: price,
+    quantity: quantity
+  };
+  inventory.push(product);
+  console.log(`${name} added!`);
+}
 }
 
 // 2. Remove Product
