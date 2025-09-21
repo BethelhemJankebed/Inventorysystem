@@ -61,11 +61,11 @@ function generatereport() {
     let total = 0;
     let lowStockItems = [];
 
-    for (let i = 0; i < shelf.length; i++) {
-        total += shelf[i].price + shelf[i].quantity;
+    for (let i = 0; i < inventory.length; i++) {
+        total += inventory[i].price * inventory[i].quantity;
 
-        if (shelf[i].quantity < 5) {
-            lowStockItems.push(${shelf[i].name} (${shelf[i].quantity} left));
+        if (inventory[i].quantity < 5) {
+            lowStockItems.push(${inventory[i].name} (${inventory[i].quantity} left));
         }
     }
 
@@ -79,7 +79,6 @@ function generatereport() {
     } else {
         console.log("All items are well stocked.");
     }
-}
 
 //  SAMPLE USAGE / TESTING 
 addProduct("P001", "Notebook", 2, 20);
