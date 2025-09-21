@@ -15,12 +15,10 @@ function addProduct(id, name, price, quantity) {
 
 
 // 2. Remove Product
-
 function removeProduct(id) {
   let found = false;
 
   for (let i = 0; i < inventory.length; i++) {
-    
     if (inventory[i].id === id) {
       inventory.splice(i, 1); // remove 1 item at index i
       found = true;
@@ -30,9 +28,8 @@ function removeProduct(id) {
   }
 
   if (!found) {
-    console.log(`Product with ID ${id} not found.`)
+    console.log(`Product with ID ${id} not found.`);
   }
-
 }
 
 
@@ -57,7 +54,7 @@ function updateStock(id, newQuantity) {
 }
 
 // 4. Generate Report
-function generatereport() {
+function generateReport() {   // <-- fixed function name
     let total = 0;
     let lowStockItems = [];
 
@@ -65,7 +62,7 @@ function generatereport() {
         total += inventory[i].price * inventory[i].quantity;
 
         if (inventory[i].quantity < 5) {
-            lowStockItems.push(${inventory[i].name} (${inventory[i].quantity} left));
+            lowStockItems.push(`${inventory[i].name} (${inventory[i].quantity} left)`); // <-- fixed
         }
     }
 
@@ -79,6 +76,7 @@ function generatereport() {
     } else {
         console.log("All items are well stocked.");
     }
+}
 
 //  SAMPLE USAGE / TESTING 
 addProduct("P001", "Notebook", 2, 20);
