@@ -15,16 +15,26 @@ function addProduct(id, name, price, quantity) {
 
 
 // 2. Remove Product
+
 function removeProduct(id) {
+  let found = false;
+
   for (let i = 0; i < inventory.length; i++) {
+    
     if (inventory[i].id === id) {
-      console.log(${inventory[i].name} removed!);
       inventory.splice(i, 1); // remove 1 item at index i
-      return;
+      found = true;
+      console.log(`Product with ID ${id} removed successfully.`);
+      break;
     }
   }
-  console.log(Product not found.);
+
+  if (!found) {
+    console.log(`Product with ID ${id} not found.`)
+  }
+
 }
+
 
 // 3. Update Stock
 function updateStock(id, newQuantity) {
